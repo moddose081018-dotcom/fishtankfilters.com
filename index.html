@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Fish Tank Filters – Data-Driven Reviews</title>
+  <title>Fish Tank Filters – Data-Driven Reviews (2026)</title>
+  <meta name="description" content="We tested the top fish tank filters of 2026 on real aquariums. Compare flow rates, noise levels, and water clarity data to find the perfect filter for your tank.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://fishtankfilters.com/">
+  
   <style>
     :root {
       --bg: #ffffff;
@@ -18,11 +21,10 @@
       --radius-lg: 12px;
       --radius-md: 8px;
       --radius-sm: 4px;
+      --gold: #EDA300;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -32,14 +34,10 @@
       line-height: 1.6;
     }
 
-    a {
-      color: var(--action);
-      text-decoration: none;
-    }
+    a { color: var(--action); text-decoration: none; transition: color 0.2s; }
+    a:hover { text-decoration: underline; }
 
-    a:hover {
-      text-decoration: underline;
-    }
+    img { max-width: 100%; height: auto; display: block; }
 
     .page {
       max-width: 1120px;
@@ -47,6 +45,7 @@
       padding: 24px 16px 64px;
     }
 
+    /* HEADER */
     header {
       display: flex;
       align-items: center;
@@ -56,42 +55,21 @@
       margin-bottom: 24px;
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
+    .logo { display: flex; align-items: center; gap: 8px; }
     .logo-mark {
       width: 32px;
       height: 32px;
       border-radius: 50%;
       background: radial-gradient(circle at 30% 30%, #66c2ff, #005a9e);
     }
+    .logo-text { font-weight: 700; font-size: 18px; letter-spacing: 0.02em; color: var(--text); }
 
-    .logo-text {
-      font-weight: 700;
-      font-size: 18px;
-      letter-spacing: 0.02em;
-    }
+    nav { display: flex; gap: 20px; font-size: 14px; }
+    nav a { color: var(--muted); font-weight: 500; }
+    nav a.active { color: var(--text); font-weight: 700; }
+    nav a:hover { color: var(--action); }
 
-    nav {
-      display: flex;
-      gap: 16px;
-      font-size: 14px;
-    }
-
-    nav a {
-      color: var(--muted);
-    }
-
-    nav a.active {
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    /* Hero */
-
+    /* HERO SECTION */
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
@@ -109,56 +87,41 @@
       letter-spacing: 0.12em;
       color: var(--muted);
       margin-bottom: 8px;
+      font-weight: 600;
     }
 
-    .hero h1 {
-      font-size: 32px;
-      line-height: 1.2;
-      margin: 0 0 12px;
-    }
-
-    .hero-subtitle {
-      font-size: 16px;
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
+    .hero h1 { font-size: 32px; line-height: 1.2; margin: 0 0 12px; letter-spacing: -0.02em; }
+    
+    .hero-subtitle { font-size: 16px; color: var(--muted); margin-bottom: 20px; max-width: 480px; }
 
     .hero-bullets {
       list-style: none;
       padding: 0;
       margin: 0 0 24px;
       display: grid;
-      gap: 6px;
-    }
-
-    .hero-bullets li {
-      display: flex;
-      align-items: flex-start;
       gap: 8px;
-      font-size: 14px;
     }
 
+    .hero-bullets li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; }
+    
     .hero-bullets span.icon {
-      width: 18px;
-      height: 18px;
-      border-radius: 999px;
-      border: 1px solid var(--action);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--action-soft);
       color: var(--action);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 11px;
+      font-size: 12px;
       flex-shrink: 0;
+      font-weight: bold;
     }
 
-    .hero-ctas {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
 
     .hero-cta {
-      flex: 1 1 180px;
+      flex: 1 1 160px;
       border-radius: var(--radius-md);
       border: 1px solid var(--border);
       background: #ffffff;
@@ -167,26 +130,20 @@
       flex-direction: column;
       gap: 2px;
       cursor: pointer;
-      transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+      transition: all 0.2s ease;
     }
 
     .hero-cta:hover {
       border-color: var(--action);
-      box-shadow: 0 10px 26px rgba(15,23,42,0.06);
-      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(31, 122, 224, 0.1);
+      transform: translateY(-2px);
       text-decoration: none;
     }
 
-    .hero-cta-label {
-      font-size: 14px;
-      font-weight: 600;
-    }
+    .hero-cta-label { font-size: 14px; font-weight: 700; color: var(--action); }
+    .hero-cta-meta { font-size: 12px; color: var(--muted); line-height: 1.4; }
 
-    .hero-cta-meta {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
+    /* Hero Visuals */
     .hero-media {
       border-radius: var(--radius-md);
       background: linear-gradient(135deg, #d6f2ff, #e6f1fc);
@@ -195,115 +152,88 @@
       align-items: center;
       justify-content: center;
       padding: 16px;
-      position: relative;
-      overflow: hidden;
     }
 
     .hero-media-inner {
       width: 100%;
-      max-width: 360px;
-      aspect-ratio: 4 / 3;
-      border-radius: var(--radius-md);
+      max-width: 400px;
       background: #ffffff;
-      border: 1px solid #c9ddf7;
+      border-radius: var(--radius-md);
       box-shadow: 0 16px 40px rgba(15,23,42,0.12);
+      padding: 16px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      padding: 12px;
-      gap: 8px;
+      gap: 12px;
     }
 
     .hero-product {
-      border-radius: var(--radius-md);
-      background: #f6f9ff;
-      border: 1px solid #d7e4ff;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      padding: 8px;
-      font-size: 11px;
       text-align: center;
+      position: relative;
     }
 
-    .hero-product-img {
-      width: 100%;
-      height: 70px;
+    .badge-winner {
+      position: absolute;
+      top: -10px;
+      right: -6px;
+      background: var(--gold);
+      color: white;
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 4px 8px;
+      border-radius: 99px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+      z-index: 10;
+    }
+
+    .hero-product img {
       border-radius: var(--radius-sm);
-      background: linear-gradient(135deg, #f4f7fb, #e1e9f7);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
+      background: #f4f7fb;
+      border: 1px solid #eef2f6;
     }
 
-    .hero-product-name {
-      font-weight: 600;
-      margin-bottom: 2px;
-    }
+    .hero-product-name { font-weight: 600; font-size: 11px; margin-bottom: 2px; }
+    .hero-product-score { font-size: 10px; color: var(--muted); }
 
-    .hero-product-score {
-      font-size: 10px;
-      color: var(--muted);
-    }
-
-    /* Trust bar */
-
+    /* TRUST BAR */
     .trust-bar {
-      margin: 12px 0 32px;
+      margin: 12px 0 40px;
       padding: 10px 16px;
       border-radius: 999px;
       background: var(--trust-bar);
       border: 1px solid var(--border);
-      font-size: 12px;
-      color: var(--muted);
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 16px;
       align-items: center;
       justify-content: center;
     }
 
-    .trust-pill {
-      display: inline-flex;
+    .trust-item {
+      display: flex;
       align-items: center;
       gap: 6px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: #ffffff;
-      border: 1px solid #e2e2e2;
-      font-size: 11px;
-    }
-
-    .trust-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--action);
-    }
-
-    /* Popular categories */
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 16px;
-      margin-bottom: 16px;
-    }
-
-    .section-header h2 {
-      font-size: 22px;
-      margin: 0;
-    }
-
-    .section-subtitle {
-      font-size: 13px;
+      font-size: 12px;
       color: var(--muted);
+      font-weight: 500;
     }
+
+    .trust-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--action); }
+
+    /* CATEGORIES GRID */
+    .section-header { margin-bottom: 24px; }
+    .section-header h2 { font-size: 24px; margin: 0 0 8px; }
+    .section-subtitle { font-size: 14px; color: var(--muted); }
 
     .category-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
-      margin-bottom: 40px;
+      gap: 24px;
+      margin-bottom: 48px;
     }
 
     .category-card {
@@ -314,308 +244,223 @@
       padding: 16px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
+      transition: transform 0.2s;
     }
 
-    .category-image {
+    .category-card:hover { transform: translateY(-3px); }
+
+    .category-card img {
       width: 100%;
       aspect-ratio: 4 / 3;
+      object-fit: cover;
       border-radius: var(--radius-md);
-      background: linear-gradient(135deg, #eef6ff, #e0f5ff);
-      margin-bottom: 6px;
+      background: #f0f4f8;
     }
 
-    .category-title {
-      font-size: 16px;
-      font-weight: 600;
-    }
-
-    .category-meta {
-      font-size: 12px;
-      color: var(--muted);
-    }
+    .category-title { font-size: 17px; font-weight: 700; margin: 4px 0 0; }
+    .category-meta { font-size: 13px; color: var(--muted); line-height: 1.5; }
 
     .category-link {
       margin-top: auto;
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--action);
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
     }
 
-    .category-link span.arrow {
-      font-size: 14px;
-    }
-
-    /* Secondary content row (optional) */
-
-    .secondary-row {
-      display: grid;
-      grid-template-columns: minmax(0, 2.5fr) minmax(0, 2fr);
-      gap: 28px;
-      margin-bottom: 40px;
-    }
-
-    .secondary-card {
-      border-radius: var(--radius-lg);
-      background: #ffffff;
-      border: 1px solid var(--border);
-      padding: 16px 18px;
-    }
-
-    .secondary-card h3 {
-      font-size: 16px;
-      margin: 0 0 8px;
-    }
-
-    .secondary-card ul {
-      margin: 0;
-      padding-left: 18px;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
+    /* FOOTER */
     footer {
       border-top: 1px solid var(--border);
-      padding-top: 16px;
-      font-size: 12px;
+      padding-top: 24px;
+      font-size: 13px;
       color: var(--muted);
       display: flex;
       justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
+      align-items: center;
     }
+    
+    .footer-links { display: flex; gap: 16px; }
+    .footer-links a { color: var(--muted); }
 
-    /* Responsive */
-
+    /* RESPONSIVE */
     @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 24px 18px;
-      }
-
-      .hero-media {
-        order: -1;
-      }
-
-      .category-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .secondary-row {
-        grid-template-columns: 1fr;
-      }
+      .hero { grid-template-columns: 1fr; padding: 24px 20px; }
+      .hero-media { order: -1; margin-bottom: 16px; }
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
-    @media (max-width: 640px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-
-      .page {
-        padding-inline: 12px;
-      }
-
-      .hero {
-        padding: 20px 14px;
-      }
-
-      .hero h1 {
-        font-size: 24px;
-      }
-
-      .hero-subtitle {
-        font-size: 14px;
-      }
-
-      .hero-ctas {
-        flex-direction: column;
-      }
-
-      .category-grid {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 600px) {
+      header { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .page { padding-inline: 12px; }
+      .category-grid { grid-template-columns: 1fr; }
+      .hero-ctas { flex-direction: column; }
+      footer { flex-direction: column; align-items: flex-start; gap: 12px; }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Fish Tank Filters – Data-Driven Reviews",
+    "description": "Independent testing of canister, HOB, and internal aquarium filters.",
+    "url": "https://fishtankfilters.com",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://fishtankfilters.com/best-canister-filters"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://fishtankfilters.com/best-hob-filters"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://fishtankfilters.com/fish-tank-setup-guide"
+        }
+      ]
+    }
+  }
+  </script>
 </head>
+
 <body>
+
   <div class="page">
+    
     <header>
-      <div class="logo">
+      <a href="/" class="logo">
         <div class="logo-mark"></div>
         <div class="logo-text">FishTankFilters</div>
-      </div>
+      </a>
       <nav>
-        <a href="#" class="active">Home</a>
-        <a href="#">Canister Filters</a>
-        <a href="#">HOB Filters</a>
-        <a href="#">Beginner Setups</a>
+        <a href="#" class="active">Reviews</a>
+        <a href="#">Setups</a>
         <a href="#">About</a>
       </nav>
     </header>
 
-    <!-- Hero / Router -->
     <section class="hero">
       <div class="hero-copy">
-        <div class="hero-kicker">Independent testing · Updated 2026</div>
+        <div class="hero-kicker">Independent Lab Testing · Updated 2026</div>
         <h1>The data-driven guide to fish tank filters.</h1>
         <p class="hero-subtitle">
-          We measure flow rate, noise, and water clarity on real tanks so you can pick the right filter the first time.
+          We measure flow rate, noise levels (dB), and water clarity on real tanks so you can pick the right filter the first time.
         </p>
 
         <ul class="hero-bullets">
           <li>
             <span class="icon">✓</span>
-            <div>Hands-on lab testing across canister, HOB, and internal filters.</div>
+            <div><strong>Real-world testing</strong> on stocked aquariums, not empty tanks.</div>
           </li>
           <li>
             <span class="icon">✓</span>
-            <div>Side-by-side comparisons of flow rate, noise levels, and tank size.</div>
+            <div><strong>Data comparisons</strong> for flow drop-off and noise output.</div>
           </li>
           <li>
             <span class="icon">✓</span>
-            <div>Beginner-friendly guides for setting up clear, stable aquariums.</div>
+            <div><strong>Unbiased ranking</strong> of Fluval, Eheim, Marineland, and more.</div>
           </li>
         </ul>
 
         <div class="hero-ctas">
-          <a href="#" class="hero-cta">
-            <div class="hero-cta-label">Browse Canister Filters</div>
-            <div class="hero-cta-meta">For medium–large tanks or heavy stocking.</div>
+          <a href="/best-canister-filters" class="hero-cta">
+            <span class="hero-cta-label">Browse Canister Filters</span>
+            <span class="hero-cta-meta">Best for medium–large tanks (40g+)</span>
           </a>
-          <a href="#" class="hero-cta">
-            <div class="hero-cta-label">Browse HOB Filters</div>
-            <div class="hero-cta-meta">Easy-to-install filters for most community tanks.</div>
+          <a href="/best-hob-filters" class="hero-cta">
+            <span class="hero-cta-label">Browse HOB Filters</span>
+            <span class="hero-cta-meta">Easy setup for community tanks</span>
           </a>
-          <a href="#" class="hero-cta">
-            <div class="hero-cta-label">See Beginner Setups</div>
-            <div class="hero-cta-meta">Step-by-step setups for your first clear tank.</div>
+          <a href="/fish-tank-setup-guide" class="hero-cta">
+            <span class="hero-cta-label">Beginner Setups</span>
+            <span class="hero-cta-meta">Step-by-step clear water guides</span>
           </a>
         </div>
       </div>
 
       <div class="hero-media">
-        <!-- Placeholder “top 3 filters” visual -->
         <div class="hero-media-inner">
+          
           <div class="hero-product">
-            <div class="hero-product-img"></div>
-            <div class="hero-product-name">Top Canister</div>
-            <div class="hero-product-score">9.4 / 10 · 75–200L</div>
+            <div class="badge-winner">#1 CHOICE</div>
+            <img src="images/hero_home_fluval-fx6.jpg" alt="Fluval FX6 Canister Filter" width="80" height="80" loading="lazy">
+            <div class="hero-product-name">Fluval FX Series</div>
+            <div class="hero-product-score">9.8/10 · Canister</div>
           </div>
+
           <div class="hero-product">
-            <div class="hero-product-img"></div>
-            <div class="hero-product-name">Best HOB</div>
-            <div class="hero-product-score">9.1 / 10 · up to 110L</div>
+            <img src="images/hero_home_tidal-55.jpg" alt="Seachem Tidal HOB Filter" width="80" height="80" loading="lazy">
+            <div class="hero-product-name">Seachem Tidal</div>
+            <div class="hero-product-score">9.4/10 · HOB</div>
           </div>
+
           <div class="hero-product">
-            <div class="hero-product-img"></div>
-            <div class="hero-product-name">Budget Pick</div>
-            <div class="hero-product-score">8.7 / 10 · starter tanks</div>
+            <img src="images/hero_home_aquaclear.jpg" alt="AquaClear Filter System" width="80" height="80" loading="lazy">
+            <div class="hero-product-name">AquaClear</div>
+            <div class="hero-product-score">9.1/10 · Value</div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Trust bar -->
     <section class="trust-bar">
-      <div class="trust-pill">
-        <span class="trust-dot"></span>
-        Independent research
-      </div>
-      <div class="trust-pill">
-        <span class="trust-dot"></span>
-        Hands-on testing on real aquariums
-      </div>
-      <div class="trust-pill">
-        <span class="trust-dot"></span>
-        Updated for 2026
-      </div>
+      <div class="trust-item"><span class="trust-dot"></span> 100% Independent Research</div>
+      <div class="trust-item"><span class="trust-dot"></span> Hands-on Testing</div>
+      <div class="trust-item"><span class="trust-dot"></span> No Sponsored Rankings</div>
     </section>
 
-    <!-- Popular Categories -->
     <section>
       <div class="section-header">
-        <h2>Popular categories</h2>
-        <div class="section-subtitle">
-          Start with the type of filter that matches your tank size and experience level.
-        </div>
+        <h2>Popular Categories</h2>
+        <div class="section-subtitle">Start with the type of filter that matches your tank size.</div>
       </div>
 
       <div class="category-grid">
-        <!-- Category 1 -->
+        
         <article class="category-card">
-          <div class="category-image"></div>
-          <div class="category-title">Best Canister Filters (2026)</div>
-          <div class="category-meta">
-            Ranked by flow rate, noise, and long-term clarity for medium and large aquariums.
-          </div>
-          <a href="#" class="category-link">
-            <span>Read canister guide</span>
-            <span class="arrow">→</span>
-          </a>
+          <img src="images/hub_canister-filters_best-of-2026.jpg" alt="Best canister filters for large aquariums" width="400" height="300" loading="lazy">
+          <h3 class="category-title">Best Canister Filters</h3>
+          <p class="category-meta">Ranked by flow rate, media capacity, and silence. Perfect for 40-200 gallon tanks.</p>
+          <a href="/best-canister-filters" class="category-link">Read Guide →</a>
         </article>
 
-        <!-- Category 2 -->
         <article class="category-card">
-          <div class="category-image"></div>
-          <div class="category-title">Best HOB Filters (2026)</div>
-          <div class="category-meta">
-            Easy-to-use hang-on-back filters for community tanks and beginners.
-          </div>
-          <a href="#" class="category-link">
-            <span>Read HOB guide</span>
-            <span class="arrow">→</span>
-          </a>
+          <img src="images/hub_hob-filters_best-of-2026.jpg" alt="Best Hang on Back filters for community tanks" width="400" height="300" loading="lazy">
+          <h3 class="category-title">Best HOB Filters</h3>
+          <p class="category-meta">The "Hang-on-Back" standard. We tested priming issues, bypass, and ease of cleaning.</p>
+          <a href="/best-hob-filters" class="category-link">Read Guide →</a>
         </article>
 
-        <!-- Category 3 -->
         <article class="category-card">
-          <div class="category-image"></div>
-          <div class="category-title">Beginner Tank Setups</div>
-          <div class="category-meta">
-            Complete filter + tank combinations for a clear, stable first aquarium.
-          </div>
-          <a href="#" class="category-link">
-            <span>View beginner setups</span>
-            <span class="arrow">→</span>
-          </a>
+          <img src="images/hub_setup_beginner-guide.jpg" alt="Complete fish tank setup guide" width="400" height="300" loading="lazy">
+          <h3 class="category-title">Beginner Tank Setups</h3>
+          <p class="category-meta">Don't guess. Here are the exact filter, heater, and tank combos for a successful start.</p>
+          <a href="/fish-tank-setup-guide" class="category-link">View Setups →</a>
         </article>
-      </div>
-    </section>
 
-    <!-- Optional secondary row: methodology + internal links -->
-    <section class="secondary-row">
-      <div class="secondary-card">
-        <h3>How we test filters</h3>
-        <ul>
-          <li>Measure real-world flow rate with tanks loaded to typical stocking levels.</li>
-          <li>Track water clarity and debris capture over multi-week runs.</li>
-          <li>Log noise at a fixed distance so you know how loud a filter really is.</li>
-        </ul>
-      </div>
-      <div class="secondary-card">
-        <h3>Next steps</h3>
-        <ul>
-          <li>Already own a filter? Read our maintenance and troubleshooting guide.</li>
-          <li>Not sure what size you need? Use our tank size and flow-rate explainer.</li>
-          <li>Want quiet equipment? Jump to the low-noise filter recommendations.</li>
-        </ul>
       </div>
     </section>
 
     <footer>
-      <div>© 2026 FishTankFilters.com · Independent, data-driven reviews.</div>
-      <div>
-        <a href="#">About</a> ·
-        <a href="#">Testing process</a> ·
-        <a href="#">Contact</a>
+      <div>© 2026 FishTankFilters.com · Data-Driven Aquarium Advice.</div>
+      <div class="footer-links">
+        <a href="/about">About Us</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/contact">Contact</a>
       </div>
     </footer>
+
   </div>
+
 </body>
 </html>
-
